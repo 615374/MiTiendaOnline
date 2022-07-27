@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Blaka&family=Caveat&family=Indie+Flower&family=PT+Sans:ital@1&family=Quicksand:wght@300&family=Shadows+Into+Light&family=Square+Peg&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Blaka&family=Caveat&family=Indie+Flower&family=PT+Sans:ital@1&family=Quicksand:wght@300&family=Shadows+Into+Light&family=Square+Peg&family=Yanone+Kaffeesatz:wght@300&display=swap');
 
 * {
     margin: 0;
@@ -6,9 +6,17 @@
     box-sizing: border-box;
 }
 
+nav{
+    display: flex;
+    margin-left: 500px;
+    font-family: 'Blaka', cursive;
+
+}
+
 body{
     font-family: 'Roboto', sans-serif;
     background-color: black;
+    
 }
 img {
     width: 100%;
@@ -27,9 +35,19 @@ h1 {
     color: rgb(250, 8, 173);
     font-family: 'Blaka', cursive;
     font-weight: 300;
-    font-size: 50px;
+    font-size: 70px;
+    margin-left: 300px;
     
 }
+
+h3 { 
+    display: center;
+    font-size: x-large;
+    font-family: 'Blaka', cursive;
+    text-align: center;
+
+}
+
 #boton-carrito {
     border: none;
     color: rgb(250, 8, 173);
@@ -56,26 +74,35 @@ h1 {
     color: rgb(250, 8, 173);
 }
 
-p {
+p { 
+    display: flex;
     line-height: 1.8;
+    font-size: medium;
+    justify-content: center;
+    
+    
 }
 .producto {
     max-width: 20%;
     padding: 10px;
     margin: 10px;
     margin-bottom: 20px;
-    box-shadow: 2px 6px 3px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 5px 4px 3px rgba(124, 124, 124, 0.3);
 }
+
 .precioProducto {
     font-weight: 700;
 }
 .boton-agregar {
+
+    display: flex;
     background-color: black;
     color: rgb(71, 69, 69);
     font-size: 18px;
     font-weight: 700;
     padding: 5px;
     border: none;
+    margin-left: 54px;
 }
 .boton-agregar:hover {
     cursor: pointer;
@@ -167,3 +194,37 @@ p {
 .boton-eliminar:focus {
     outline: none;
 }
+
+footer{
+    padding: 40x 20px;
+    margin-bottom: 0;
+    margin-top: 160px;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.redesociales{
+    display: flex;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    
+}
+
+.redes{
+    display: flex;
+    display: list-item;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    margin-left: 8rem;
+    font-size: x-small;
+    font-family: 'Blaka', cursive;
+           
+}
+
+.copyright{
+  
+    margin-block-end: 2cm; 
+    align-items: flex-end;   
+    margin-left: 50rem;
+    font-family: 'Blaka', cursive;
+ }
