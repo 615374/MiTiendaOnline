@@ -26,8 +26,17 @@ stockProductos.forEach((producto) => {
     <p>Talle: ${producto.talle}</p>
     <p class="precioProducto">Precio:$ ${producto.precio}</p>
     <button id="agregar${producto.id}" class="boton-agregar">Agregar <i class="fas fa-shopping-cart"></i></button>
-    `
+    <div>
+    <p class="contar">0</p>
+    </div>
+    <div class="botones-add-remove-cached">
+    <button class="incr" id="incr"><span class="material-symbols-rounded">add</span></button>
+    <button class="decr" id="decr"><span class="material-symbols-rounded">remove</span></button>
+    <button class="reset" id="reset"><span class="material-symbols-rounded">cached</span></button>
+    </div>
 
+    `
+    
     //Inyecto el contenedor de productos a traves de un appendChild en el html.
     contenedorProductos.appendChild(div)
 
@@ -38,7 +47,11 @@ stockProductos.forEach((producto) => {
         
         agregarAlCarrito(producto.id)
         
+        swal('Has agregado un producto al carrito')
     })
+
+   
+
 })
 
 
@@ -106,6 +119,8 @@ const eliminarDelCarrito = (prodId) => {
     actualizarCarrito()
 
     console.log(carrito)
+
+    swal('Has eliminado productos del carrito')
 }
 
 
@@ -114,6 +129,8 @@ const eliminarDelCarrito = (prodId) => {
 botonVaciar.addEventListener('click', () => {
     carrito.length = 0
     actualizarCarrito()
+
+    swal('Has vaciado el carrito')
 })
 
 
@@ -124,3 +141,4 @@ document.addEventListener('DOMContentLoaded', () => {
         actualizarCarrito()
     }
 })
+

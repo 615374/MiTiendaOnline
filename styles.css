@@ -36,7 +36,7 @@ h1 {
     font-family: 'Blaka', cursive;
     font-weight: 300;
     font-size: 70px;
-    margin-left: 300px;
+    margin-left: 330px;
     
 }
 
@@ -104,6 +104,25 @@ p {
     border: none;
     margin-left: 54px;
 }
+
+.botones-add-remove-cached{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+     
+}
+
+button{
+    cursor: pointer;
+}
+
+.material-symbols-rounded{
+    display: flex;
+    font-size: large;
+    background-color: rgb(71, 71, 71);
+    
+}
+
 .boton-agregar:hover {
     cursor: pointer;
 }
@@ -195,6 +214,7 @@ p {
     outline: none;
 }
 
+
 footer{
     padding: 40x 20px;
     margin-bottom: 0;
@@ -205,8 +225,8 @@ footer{
 
 .redesociales{
     display: flex;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    
+    font-family: 'Blaka', cursive;
+    color: rgb(147, 147, 147);   
 }
 
 .redes{
@@ -227,4 +247,5 @@ footer{
     align-items: flex-end;   
     margin-left: 50rem;
     font-family: 'Blaka', cursive;
+    color: rgb(147, 147, 147);
  }
