@@ -16,6 +16,7 @@ let carrito = []
 //Inyecto el html y la descripcion del producto (img, nombre, descripcion, talle, precio).
 //Creo un boton para agregar los productos.
 
+
 stockProductos.forEach((producto) => {
     const div = document.createElement('div')
     div.classList.add('producto')
@@ -27,11 +28,11 @@ stockProductos.forEach((producto) => {
     <p class="precioProducto">Precio:$ ${producto.precio}</p>
     <button id="agregar${producto.id}" class="boton-agregar">Agregar <i class="fas fa-shopping-cart"></i></button>
     <div>
-    <p class="contar">0</p>
+    <p class="contar" id="numero">0</p>
     </div>
     <div class="botones-add-remove-cached">
-    <button class="incr" id="incr"><span class="material-symbols-rounded">add</span></button>
-    <button class="decr" id="decr"><span class="material-symbols-rounded">remove</span></button>
+    <button class="incr" id="sumar"><span class="material-symbols-rounded">add</span></button>
+    <button class="decr" id="restar"><span class="material-symbols-rounded">remove</span></button>
     <button class="reset" id="reset"><span class="material-symbols-rounded">cached</span></button>
     </div>
 
@@ -49,10 +50,33 @@ stockProductos.forEach((producto) => {
         
         swal('Has agregado un producto al carrito')
     })
-
-   
+      
 
 })
+
+
+const resultado = document.querySelector('#numero');
+const sumar = document.querySelector('#sumar');
+const restar = document.querySelector('#restar');
+
+
+let total = 0;
+
+const aumentarContador = (e) => {
+    total++;
+    resultado.value = `${total}`;
+}
+
+const dismContador = (e) => {
+    total--;
+
+    resultado.value = `${total}`;
+}
+
+
+sumar.addEventListener('click', aumentarContador);
+restar.addEventListener('click', dismContador);
+
 
 
 
@@ -124,6 +148,7 @@ const eliminarDelCarrito = (prodId) => {
 }
 
 
+
 //Agrego un evento para que al clickear el boton Vaciar carrito se me eliminen los productos dentro 
 //(igualo la longitud a 0)
 botonVaciar.addEventListener('click', () => {
@@ -131,7 +156,10 @@ botonVaciar.addEventListener('click', () => {
     actualizarCarrito()
 
     swal('Has vaciado el carrito')
+
+    localStorage.removeItem('carrito', JSON.stringify(carrito));
 })
+
 
 
 //Agrego un evento para que al actualizar el DOM llame al localStorage, obtenga los item del carrito y me los conserve
